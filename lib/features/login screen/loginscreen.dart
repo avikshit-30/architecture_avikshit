@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../constants/assets.dart';
 import 'login_controller.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
@@ -48,8 +49,9 @@ class LoginScreen extends ConsumerWidget {
               SizedBox(
                 child: GestureDetector(
                   onTap: () {
-                    ref.watch(myProvider.notifier).updateValue(false);
-                    handleSignIn(context, ref);
+                    context.goNamed("home");
+                    //ref.watch(myProvider.notifier).updateValue(false);
+                    //handleSignIn(context, ref);
                   },
                   child: providerValue
                       ? Container(
